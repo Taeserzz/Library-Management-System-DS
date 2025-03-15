@@ -54,6 +54,6 @@ Library-Management-System/
 
 ## 📝 **Project Contributions**
 
-| **Name** | **Role** | **Contribution** |
-|----------|----------|------------------|
-| La-Tavia Pearce | 
+| **Name** | **ID** | **Role** | **Contribution** |
+|----------|--------|----------|------------------|
+| La-Tavia Pearce | 2305853 | 
