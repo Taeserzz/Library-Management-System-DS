@@ -19,7 +19,7 @@ This system provides the following functionalities:
 ---
 
 ## 🛠 **Tech Stack** 
-- **Programming Language:** Java / C++
+- **Programming Language:** Java 
 - **Data Structures Used:** Linked List, Stack, Queue, Binary Search Tree (BST)
 - **File Storage:** Text files for book and patron management
 - **Authentication:** Password hashing for security
@@ -27,4 +27,8 @@ This system provides the following functionalities:
 ---
 
 ## 📂 **Project Structure** 
-
+Library-Management-System/ │── src/
+│ ├── main.java # Main program file │ ├── Book.java # Book management (Linked List, BST) │ ├── Patron.java # Patron management (Linked List) │ ├── Library.cpp / Library.java # Main Library class │ ├── Password.java # Authentication & Password Hashing │ ├── FileHandler.java # File system management │ ├── CheckOut.java # Queue (checkouts) & Stack (undo) │ ├── UI.java # Command-Line/GUI Interface │── data/
+│ ├── books.txt # Stores book details │ ├── patrons.txt # Stores patron details │ ├── passwords.txt # Stores hashed passwords │── docs/
+│ ├── ER_Diagram.png # System design diagram │ ├── User_Manual.pdf # Instructions for use │ ├── Project_Report.pdf # Group report with contributions │── tests/
+│ ├── test_library.java # Test cases │ ├── test_cases.txt # List of test scenarios │── .gitignore # Ignore unnecessary files │── README.md # Project description & setup guide 
