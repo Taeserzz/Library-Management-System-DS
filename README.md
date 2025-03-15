@@ -27,8 +27,27 @@ This system provides the following functionalities:
 ---
 
 ## 📂 **Project Structure** 
-Library-Management-System/ │── src/
-│ ├── main.java # Main program file │ ├── Book.java # Book management (Linked List, BST) │ ├── Patron.java # Patron management (Linked List) │ ├── Library.cpp / Library.java # Main Library class │ ├── Password.java # Authentication & Password Hashing │ ├── FileHandler.java # File system management │ ├── CheckOut.java # Queue (checkouts) & Stack (undo) │ ├── UI.java # Command-Line/GUI Interface │── data/
-│ ├── books.txt # Stores book details │ ├── patrons.txt # Stores patron details │ ├── passwords.txt # Stores hashed passwords │── docs/
-│ ├── ER_Diagram.png # System design diagram │ ├── User_Manual.pdf # Instructions for use │ ├── Project_Report.pdf # Group report with contributions │── tests/
-│ ├── test_library.java # Test cases │ ├── test_cases.txt # List of test scenarios │── .gitignore # Ignore unnecessary files │── README.md # Project description & setup guide 
+Library-Management-System/
+│── src/                     # Source code files
+│   ├── main.java             # Main program file
+│   ├── Book.java             # Book class
+│   ├── Patron.java           # Patron class
+│   ├── Library.java          # Library system logic
+│   ├── Password.java         # Password hashing system
+│   ├── FileHandler.java      # Handles file reading/writing
+│   ├── Search.java           # Implements BST search
+│   ├── CheckOut.java         # Checkout/return system
+│   ├── UI.java               # User Interface
+│── data/                     # Data storage files
+│   ├── books.txt             # Stores book details
+│   ├── patrons.txt           # Stores patron details
+│   ├── passwords.txt         # Stores hashed passwords
+│── docs/                     # Documentation
+│   ├── ER_Diagram.png        # ER diagram
+│   ├── User_Manual.pdf       # Instructions & screenshots
+│   ├── Project_Report.pdf    # Group project report
+│── tests/                    # Test cases
+│── .gitignore                # Files to ignore
+│── README.md                 # This file
+│── LICENSE                   # License (optional)
+
