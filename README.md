@@ -29,26 +29,31 @@ This system provides the following functionalities:
 ## 📂 **Project Structure** 
 
 Library-Management-System/
-│── src/                     # Source code files
-│   ├── main.java             # Main program file
-│   ├── Book.java             # Book class
-│   ├── Patron.java           # Patron class
-│   ├── Library.java          # Library system logic
-│   ├── Password.java         # Password hashing system
-│   ├── FileHandler.java      # Handles file reading/writing
-│   ├── Search.java           # Implements BST search
-│   ├── CheckOut.java         # Checkout/return system
-│   ├── UI.java               # User Interface
-│── data/                     # Data storage files
-│   ├── books.txt             # Stores book details
-│   ├── patrons.txt           # Stores patron details
-│   ├── passwords.txt         # Stores hashed passwords
-│── docs/                     # Documentation
-│   ├── ER_Diagram.png        # ER diagram
-│   ├── User_Manual.pdf       # Instructions & screenshots
-│   ├── Project_Report.pdf    # Group project report
-│── tests/                    # Test cases
-│── .gitignore                # Files to ignore
-│── README.md                 # This file
-│── LICENSE                   # License (optional)
+* **`src/`**: Contains all the Java source code files.
+    * `main.java`: The main entry point of the application.
+    * `Book.java`: Defines the `Book` class, representing book entities.
+    * `Patron.java`: Defines the `Patron` class, representing library patrons.
+    * `Library.java`: Implements the core library management logic.
+    * `Password.java`: Handles password hashing and verification.
+    * `FileHandler.java`: Manages reading and writing data to files.
+    * `Search.java`: Implements a Binary Search Tree (BST) for efficient searching.
+    * `CheckOut.java`: Manages the checkout and return process.
+    * `UI.java`: Implements the user interface for the application.
+* **`data/`**: Stores data files used by the application.
+    * `books.txt`: Contains information about books.
+    * `patrons.txt`: Contains information about patrons.
+    * `passwords.txt`: Stores hashed passwords.
+* **`docs/`**: Contains project documentation.
+    * `ER_Diagram.png`: Entity-Relationship diagram illustrating the database schema.
+    * `User_Manual.pdf`: User manual providing instructions on how to use the system.
+    * `Project_Report.pdf`: A detailed report outlining contributions, data structures used, challenges faced, and how you addressed it.
+* **`tests/`**: Contains test cases for the application.
+* **`README.md`**: This file, providing an overview of the project.
 
+---
+
+## 📝 **Project Contributions**
+
+| **Name** | **Role** | **Contribution** |
+|----------|----------|------------------|
+| La-Tavia Pearce | 
