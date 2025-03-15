@@ -56,6 +56,10 @@ Library-Management-System/
 
 ## 📝 **Project Contributions**
 
-| **Name** | **ID** | **Role** | **Contribution** |
-|----------|--------|----------|------------------|
-| La-Tavia Pearce | 2305853 | 
+| *No.** | **Name** | **ID** | **Role** | **Contribution** |
+|--------|----------|--------|----------|------------------|
+| **1** | L-Tavia Pearce | 2305853 | - Project leader & File System Manager | Oversee project progress & team coordination
+- Implementation **file storage system** (books, patrons, passwords)
+- Handle **password management (hashing, security)
+- Assist with **testing & debugging**
+| **2** |          |           | Book & Patron Management Developer | 
