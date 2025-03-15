@@ -58,8 +58,21 @@ Library-Management-System/
 
 | **No.** | **Name** | **ID** | **Role** | **Contribution** |
 |--------|----------|--------|----------|------------------|
-| **1** | L-Tavia Pearce | 2305853 | Project Leader & File System Manager | 🔹 Oversee project progress & team coordination <br> 🔹 Implement **file storage system** (books, patrons, passwords) <br> 🔹 Handle **password management** (hashing, security) <br> 🔹 Assist with **testing & debugging** |
-| **2** | [Member Name] | [ID] | Book & Patron Management Developer | 🔹 Develop **Book class (linked list)** <br> 🔹 Develop **Patron class (linked list)** <br> 🔹 Implement **patron registration system** <br> 🔹 Assist in **file handling for books/patrons** |
-| **3** | [Member Name] | [ID] | Checkout & Search System Developer | 🔹 Implement **book checkout/check-in system** (Queue & Stack) <br> 🔹 Implement **BST for book searching** <br> 🔹 Handle **book availability updates** <br> 🔹 Assist with **error handling in transactions** |
-| **4** | [Member Name] | [ID] | User Interface & Error Handling Developer | 🔹 Design **user-friendly CLI or GUI** <br> 🔹 Implement **error handling for invalid inputs & operations** <br> 🔹 Ensure smooth **user interactions** (clear prompts/messages) <br> 🔹 Assist in **testing the UI** |
-| **5** | [Member Name] | [ID] | ER Diagram & Documentation Specialist | 🔹 Design the **ER Diagram** (Books, Patrons, Transactions, etc.) <br> 🔹 Write the **User Manual** with screenshots <br> 🔹 Perform **testing & debugging** <br> 🔹 Assist in writing **individual reports** for all members |
+| **1** | L-Tavia Pearce | 2305853 | Project Management, File System & Testing Manager | 🔹 Oversee project progress & team coordination <br> 🔹 Implement **file storage system** (books, patrons, passwords) <br> 🔹 Ensure **password hashing** & Security <br> 🔹 Assist with **testing & debugging** <br> 🔹 Write **User Manual** with screenshots & **individual report**|
+| **2** | [Member Name] | [ID] | Book & Patron Management Developer | 🔹 Develop **Book & Patron classes** using **linked lists** <br> 🔹 Implement **patron registration** & **book addition** <br> 🔹 Ensure **proper data structure implementation** (linked lists) <br> 🔹 Contribute to **individual report** |
+| **3** | [Member Name] | [ID] | Checkout & Search System Developer | 🔹 Implement **book checkout/check-in system** using queue & stack <br> 🔹 Develop **BST** for **efficient book search** (by title, author, ISBN) <br> 🔹 Ensure **proper tracking of borrowed books** <br> 🔹 Contribute to **indvidual report** |
+| **4** | [Member Name] | [ID] | User Interface & Error Handling Developer | 🔹 Design a **user-friendly CLI or GUI** <br> 🔹 Implement **error handling** (invalid inputs, incorrect login, unavailable books) <br> 🔹 Ensure **smooth user interaction** (clear prompts, feedback messages) <br> 🔹 Contribute to **individual report** |
+| **5** | [Member Name] | [ID] | ER Diagram & Documentation Specialist | 🔹 Design the **ER Diagram** for book & patron management <br> 🔹 Perform **testing & debugging** <br> 🔹 Assist in writing **individual reports** for all members |
+---
+
+## 📌 **Summary of File Distribution**
+
+| **Member** | **Files They Handle** |
+|------------|-----------------------|
+| La-Tavia Pearce | `main.java`,`FileHandler.java`, `Password.java`, `test_library.java`, `User_Manual.pdf`, `README.md`, `individual Report.pdf`|
+| [2nd Member Name] | `Library.java`,`Book.java`, `Patron.java`, `individual Report.pdf`|
+| [3rd Member Name] | `CheckoutOut`,`Search.java`, `individual Report.pdf`|
+| [4th Member Name] | `Library.java`,`Book.java`, `Patron.java`, `individual Report.pdf`|
+| [5th Member Name] | `UI.java`, `individual Report.pdf`|
+| [Member Name] | `ER_Diagram.png`, `individual Report.pdf`|
+---
