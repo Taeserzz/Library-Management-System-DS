@@ -1,2 +1,5 @@
-# Library-Management-System-DS
-Library Management System for university coursework. Built with Java/C++, using linked lists, queues, stacks, and binary search trees to manage books, patrons, and checkouts efficiently. Implements file storage and password hashing for security. 
+#  Library Management System
+
+### University of Technology, Jamiaca - Data Structures Project (20%) 
+
+This project is a **Library Management System** that efficiently manages books, patrons, and check-in/check-out operations using **linked lists, stacks, queuess, and binary search trees (BSTs)**.
