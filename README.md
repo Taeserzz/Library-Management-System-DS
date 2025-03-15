@@ -72,7 +72,6 @@ Library-Management-System/
 | La-Tavia Pearce | `main.java`,`FileHandler.java`, `Password.java`, `test_library.java`, `User_Manual.pdf`, `README.md`, `individual Report.pdf`|
 | [2nd Member Name] | `Library.java`,`Book.java`, `Patron.java`, `individual Report.pdf`|
 | [3rd Member Name] | `CheckoutOut`,`Search.java`, `individual Report.pdf`|
-| [4th Member Name] | `Library.java`,`Book.java`, `Patron.java`, `individual Report.pdf`|
-| [5th Member Name] | `UI.java`, `individual Report.pdf`|
-| [Member Name] | `ER_Diagram.png`, `individual Report.pdf`|
+| [4th Member Name] | `UI.java`, `individual Report.pdf`|
+| [5th Member Name] | `ER_Diagram.png`, `individual Report.pdf`|
 ---
