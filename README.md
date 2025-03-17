@@ -46,10 +46,10 @@ Library-Management-System/
 * **`docs/`**: Contains project documentation.
     * `ER_Diagram.png`: Entity-Relationship diagram illustrating the database schema.
     * `User_Manual.pdf`: User manual providing instructions on how to use the system.
-    * `Project_Report.pdf`: A detailed report outlining contributions, data structures used, challenges faced, and how you addressed it.
+    * `Individual_Reports.pdf`: A detailed report outlining contributions, data structures used, challenges faced, and how you addressed it.
 * **`tests/`**: Contains test cases for the application.
-    *`test_cases.txt`: List of test cases.
-    *`test_library.java`: Automated test cases fror functions.
+   * `test_cases.txt`: List of test cases.
+    * `test_library.java`: Automated test cases fror functions.
 * **`README.md`**: This file, providing an overview of the project.
 
 ---
