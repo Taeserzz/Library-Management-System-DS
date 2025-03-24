@@ -69,7 +69,7 @@ Library-Management-System/
 
 | **Member** | **Files They Handle** |
 |------------|-----------------------|
-| La-Tavia Pearce | `main.java`,`FileHandler.java`, `Password.java`, `test_library.java`, `books.txt`, `partrons.txt`, `passwords.txt`, `User_Manual.pdf`, `README.md`, `individual Report.pdf`|
+| La-Tavia Pearce | `main.java`,`FileHandler.java`, `Password.java`, `test_library.java`, `books.txt`, `patrons.txt`, `passwords.txt`, `User_Manual.pdf`, `README.md`, `individual Report.pdf`|
 | Elijah Muhammad | `Library.java`,`Book.java`, `Patron.java`, `individual Report.pdf`|
 | [3rd Member Name] | `CheckoutOut`,`Search.java`, `individual Report.pdf`|
 | Jevaun Sanderson | `UI.java`, `individual Report.pdf`|
