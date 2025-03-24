@@ -1,10 +1,10 @@
-import java.io*;
+import java.io.*;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
 public class Password {
-      
+    
     private static final String PASSWORDS_FILE = "Data/passwords.txt";
     
     // Hash a password using SHA-256 
@@ -27,7 +27,7 @@ public class Password {
     public static void saveUser(String username, String password) {
         String hashedPassword = hashPassword(password);
         if (hashedPassword != null) {
-            try (BufferedWriter writer = new BufferedWriter(PASSWORDS_FILE, true))) {
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(PASSWORDS_FILE, true))) {
                 writer.writer(username + "," + hashedPassword);
                 writer.newLine();
             } catch (IOException e) {
@@ -43,7 +43,7 @@ public class Password {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line. spilt(",");
-                if (parts.length == 2 && parts[0].equals(username) && parts[1].equals(hahsedInputPassword) {
+                if (parts.length == 2 && parts[0].equals(username) && parts[1].equals(hahsedInputPassword)) {
                     return true; // Login successful 
                 }
             }
