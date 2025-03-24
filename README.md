@@ -50,6 +50,7 @@ Library-Management-System/
 * **`tests/`**: Contains test cases for the application.
    * `test_cases.txt`: List of test cases.
     * `test_library.java`: Automated test cases fror functions.
+* **`.gitignore`: Ignore unnecessary files.
 * **`README.md`**: This file, providing an overview of the project.
 
 ---
