@@ -1,0 +1,41 @@
+# Ignore compiled Java classes
+*.class
+
+# Ignore compiled JAR files
+*.jar
+
+# Ignore IntelliJ IDEA project files
+.idea/
+*.iml
+
+# Ignore Eclipse project files 
+*.classpath 
+*.project 
+*.settings/
+
+# Ignore VS Code project files
+.vscode/
+
+# Ignore build directories 
+/build/
+/out/
+
+# Ignore logs and temporary files 
+*.log
+*.tmp
+
+# Ignore system files 
+.DS_Store
+Thumbs.db
+
+# Ignore credentials & sensitive data 
+data/passwords.txt # Exclude if you don't want to  push passwords to GitHub 
+
+# Ignore dependency files 
+target/
+*.war
+*.ear
+
+# Ignore test reports 
+/test-output/
+*.ser
