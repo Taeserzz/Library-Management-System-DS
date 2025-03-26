@@ -63,7 +63,7 @@ Library-Management-System/
 | **2** | Elijah Muhammad | 2005032 | Book & Patron Management Developer | 🔹 Develop **Book & Patron classes** using **linked lists** <br> 🔹 Implement **patron registration** & **book addition** <br> 🔹 Ensure **proper data structure implementation** (linked lists) <br> 🔹 Contribute to **individual report** |
 | **3** | [Member Name] | [ID] | Checkout & Search System Developer | 🔹 Implement **book checkout/check-in system** using queue & stack <br> 🔹 Develop **BST** for **efficient book search** (by title, author, ISBN) <br> 🔹 Ensure **proper tracking of borrowed books** <br> 🔹 Contribute to **indvidual report** |
 | **4** | Jevaun Sanderson | 2306776 | User Interface & Error Handling Developer | 🔹 Design a **user-friendly CLI or GUI** <br> 🔹 Implement **error handling** (invalid inputs, incorrect login, unavailable books) <br> 🔹 Ensure **smooth user interaction** (clear prompts, feedback messages) <br> 🔹 Contribute to **individual report** |
-| **5** | [Member Name] | [ID] | ER Diagram & Documentation Specialist | 🔹 Design the **ER Diagram** for book & patron management <br> 🔹 Perform **testing & debugging** <br> 🔹 Assist in writing **individual reports** for all members |
+| **5** | Matthew Messado | 2205917 | ER Diagram & Documentation Specialist | 🔹 Design the **ER Diagram** for book & patron management <br> 🔹 Perform **testing & debugging** <br> 🔹 Assist in writing **individual reports** for all members |
 ---
 
 ## 📌 **Summary of File Distribution**
