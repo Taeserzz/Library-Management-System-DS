@@ -72,7 +72,7 @@ Library-Management-System/
 |------------|-----------------------|
 | La-Tavia Pearce | `main.java`,`FileHandler.java`, `Password.java`, `test_library.java`, `books.txt`, `patrons.txt`, `passwords.txt`, `User_Manual.pdf`, `README.md`, `individual Report.pdf`|
 | Elijah Muhammad | `Library.java`,`Book.java`, `Patron.java`, `individual Report.pdf`|
-| Romaine Morris | `CheckOut`,`Search.java`, `individual Report.pdf`|
+| Romaine Morris | `CheckOut.java`,`Search.java`, `individual Report.pdf`|
 | Jevaun Sanderson | `UI.java`, `individual Report.pdf`|
 | Matthew Messado | `ER_Diagram.png`, `individual Report.pdf`|
 ---
