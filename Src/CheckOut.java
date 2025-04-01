@@ -27,6 +27,7 @@ public class CheckOut {
             this.dueDate = dueDate;
             checkoutHistory.push(this); // Store checkout action
             bookAvailability.put(bookTitle, false); // Mark book as checked out
+            FileHandler.saveBooks(List.of(new Book(bookTitle, "", "", false)));
         } else {
             throw new IllegalStateException("This book is already checked out.");
         }
@@ -48,14 +49,15 @@ public class CheckOut {
         return dueDate;
     }
 
-    public boolean isOverdue() {
-        return LocalDate.now().isAfter(dueDate);
+    public boolean isOverdue(LocalDate currentDate) {
+        return currentDate.isAfter(dueDate);
     }
 
     public static CheckOut undoLastCheckout() {
         if (!checkoutHistory.isEmpty()) {
             CheckOut lastCheckout = checkoutHistory.pop();
             bookAvailability.put(lastCheckout.bookTitle, true); // Mark book as available again
+            FileHandler.saveBooks(List.of(new Book(lastCheckout.bookTitle, "", "", true)));
             return lastCheckout;
         } else {
             System.out.println("No checkouts to undo.");
@@ -65,5 +67,6 @@ public class CheckOut {
 
     public static void returnBook(String bookTitle) {
         bookAvailability.put(bookTitle, true); // Mark book as available again
+        FileHandler.saveBooks(List.of(new Book(bookTitle, "", "", true)));
     }
 }
