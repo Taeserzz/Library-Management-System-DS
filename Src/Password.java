@@ -1,11 +1,6 @@
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
+import java.io.*;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.io.IOException;
-import java.io.FileWriter;
 
 public class Password {
 
@@ -29,8 +24,9 @@ public class Password {
 
     // Save new user and password (plaintext in file, but hashed for verification)
     public static void saveUser(String username, String password) {
+        String hashedPassword = hashPassword(password);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(PASSWORDS_FILE, true))) {
-            writer.write(username + "," + password);
+            writer.write(username + "," + hashedPassword);
             writer.newLine();
         } catch (IOException e) {
             System.out.println("Error saving user: " + e.getMessage());
@@ -39,6 +35,7 @@ public class Password {
 
     // Verify user login (hash input and compare with plaintext password)
     public static boolean verifyUser(String username, String password) {
+        String hashedInputPassword = hashedPassword(password);
         try (BufferedReader reader = new BufferedReader(new FileReader(PASSWORDS_FILE))) {
             String line;
             while ((line = reader.readLine()) != null) {
