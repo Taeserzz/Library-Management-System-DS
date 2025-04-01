@@ -11,10 +11,10 @@ public class LibraryManagementSystem {
             headBook = newBook;
         } else {
             Book temp = headBook;
-            while (temp.next != null) {
-                temp = temp.next;
+            while (temp.getNext() != null) {
+                temp = temp.getNext();
             }
-            temp.next = newBook;
+            temp.setNext(newBook);
         }
     }
 
@@ -25,10 +25,10 @@ public class LibraryManagementSystem {
             headPatron = newPatron;
         } else {
             Patron temp = headPatron;
-            while (temp.next != null) {
-                temp = temp.next;
+            while (temp.getNext() != null) {
+                temp = temp.getNext();
             }
-            temp.next = newPatron;
+            temp.setNext(newPatron);
         }
     }
 
@@ -36,10 +36,10 @@ public class LibraryManagementSystem {
     public Book searchBook(String title) {
         Book temp = headBook;
         while (temp != null) {
-            if (temp.title.equalsIgnoreCase(title)) {
+            if (temp.getTitle().equalsIgnoreCase(title)) {
                 return temp;
             }
-            temp = temp.next;
+            temp = temp.getNext();
         }
         return null;
     }
@@ -48,12 +48,12 @@ public class LibraryManagementSystem {
     public void removeBook(String title) {
         if (headBook == null)
             return;
-        if (headBook.title.equalsIgnoreCase(title)) {
+        if (headBook.getTitle().equalsIgnoreCase(title)) {
             headBook = headBook.next;
             return;
         }
         Book temp = headBook;
-        while (temp.next != null && !temp.next.title.equalsIgnoreCase(title)) {
+        while (temp.next != null && !temp.next.getTitle().equalsIgnoreCase(title)) {
             temp = temp.next;
         }
         if (temp.next != null) {
@@ -75,9 +75,9 @@ public class LibraryManagementSystem {
     public void displayBooks() {
         Book temp = headBook;
         while (temp != null) {
-            System.out.println("Title: " + temp.title + ", Author: " + temp.author + ", ISBN: " + temp.ISBN
-                    + ", Available: " + temp.available);
-            temp = temp.next;
+            System.out.println("Title: " + temp.getTitle() + ", Author: " + temp.getAuthor() + ", ISBN: " + temp.getISBN()
+                    + ", Available: " + temp.isAvailable());
+            temp = temp.getNext();
         }
     }
 
@@ -85,9 +85,9 @@ public class LibraryManagementSystem {
     public void displayPatrons() {
         Patron temp = headPatron;
         while (temp != null) {
-            System.out.println("Name: " + temp.name + ", Card Number: " + temp.cardNumber + ", Books Checked Out: "
-                    + temp.booksCheckedOut);
-            temp = temp.next;
+            System.out.println("Name: " + temp.getName() + ", Card Number: " + temp.getCardNumber() 
+                     + ", Books Checked Out: " + temp.getBooksCheckedOut());
+            temp = temp.getNext();
         }
     }
 
@@ -103,6 +103,9 @@ public class LibraryManagementSystem {
         // Registering sample patrons
         library.registerPatron("Alice Johnson", "P12345");
         library.registerPatron("Bob Smith", "P67890");
+
+        library.displayBooks();
+        library.displayPatrons();
 
         // Interactive menu
         while (true) {
