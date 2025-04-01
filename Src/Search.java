@@ -34,10 +34,10 @@ public class Search {
     }
 
     private BookNode searchTitleRec(BookNode root, String title) {
-        if (root == null || root.title.equals(title)) {
+        if (root == null || root.title.equalsIgnoreCase(title)) {
             return root;
         }
-        return title.compareTo(root.title) < 0 ? searchTitleRec(root.left, title) : searchTitleRec(root.right, title);
+        return title.compareToIgnoreCase(root.title) < 0 ? searchTitleRec(root.left, title) : searchTitleRec(root.right, title);
     }
 
     public void searchByAuthor(String author) {
@@ -45,27 +45,31 @@ public class Search {
     }
 
     private void searchAuthorRec(BookNode root, String author) {
-        if (root != null) {
-            searchAuthorRec(root.left, author);
-            if (root.author.equalsIgnoreCase(author)) {
-                System.out.println("Title: " + root.title + ", Author: " + root.author + ", ISBN: " + root.ISBN);
-            }
-            searchAuthorRec(root.right, author);
+        if (root != null) return null;
+        if (root.author.equalsIgnoreCase(author)) {
+            return root;
         }
+        BookNode found = searchAuthorRec(root.right, author);
+        if (found == null) {
+            found = searchAuthorRec(root.right, author);
+        }
+        return found;
     }
 
-    public void searchByISBN(String ISBN) {
-        searchISBNRec(root, ISBN);
+    public BookNode searchByISBN(String ISBN) {
+        return searchISBNRec(root, ISBN);
     }
 
-    private void searchISBNRec(BookNode root, String ISBN) {
-        if (root != null) {
-            searchISBNRec(root.left, ISBN);
-            if (root.ISBN.equals(ISBN)) {
-                System.out.println("Title: " + root.title + ", Author: " + root.author + ", ISBN: " + root.ISBN);
+    private BookNode searchISBNRec(BookNode root, String ISBN) {
+        if (root == null) return null;
+         if (root.ISBN.equals(ISBN)) {
+             return root;
+         } 
+         BookNode found = searchISBNRec(root.left, ISBN);
+            if (found == null) {
+                found = searchISBNRec(root.right, ISBN);
             }
-            searchISBNRec(root.right, ISBN);
-        }
+            return found;
     }
 
     public void displayBooks() {
