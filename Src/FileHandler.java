@@ -20,7 +20,7 @@ public class FileHandler {
     }
     
     // Load books from file 
-    public static void List<Book> loadBooks() {
+    public static List<Book> loadBooks() {
         List<Book> books = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(BOOKS_FILE))) {
             String line;
@@ -49,19 +49,21 @@ public class FileHandler {
     }
     
     // Load patrons from file 
-    public static void List<Patron> loadPatrons() {
+    public static List<Patron> loadPatrons() {
         List<Patron> patrons = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(PATRONS_FILE))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
                 if (parts.length == 3) {
-                    patrons.add(new Patron(parts[0], parts[1],  parts[2]));
+                    Patron patron = new Patron(parts[0], parts[1]);
+                    patrons.setBooksCheckOut(parts[2]);
+                    patrons.add(patron);
                 }
             }
         } catch (IOException e) {
             System.out.println("Error loading patrons: " + e.getMessage());
         }
-        return books;
+        return patrons;
     }
 }
