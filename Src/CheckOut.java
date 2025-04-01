@@ -32,10 +32,21 @@ public class CheckOut {
         }
     }
 
-    public String getBookTitle() { return bookTitle; }
-    public String getBorrowerName() { return borrowerName; }
-    public LocalDate getCheckOutDate() { return checkOutDate; }
-    public LocalDate getDueDate() { return dueDate; }
+    public String getBookTitle() {
+        return bookTitle;
+    }
+
+    public String getBorrowerName() {
+        return borrowerName;
+    }
+
+    public LocalDate getCheckOutDate() {
+        return checkOutDate;
+    }
+
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
 
     public boolean isOverdue() {
         return LocalDate.now().isAfter(dueDate);
