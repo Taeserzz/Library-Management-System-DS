@@ -49,7 +49,7 @@ Library-Management-System/
     * `Individual_Reports.pdf`: A detailed report outlining contributions, data structures used, challenges faced, and how you addressed it.
 * **`tests/`**: Contains test cases for the application.
    * `test_cases.txt`: List of test cases.
-    * `test_library.java`: Automated test cases fror functions.
+    * `test_library.java`: Automated test cases for functions.
 * **`.gitignore`**: Ignore unnecessary files.
 * **`README.md`**: This file, providing an overview of the project.
 
