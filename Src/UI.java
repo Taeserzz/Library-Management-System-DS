@@ -110,10 +110,12 @@ public class UI {
     }
 
     private static void viewAllPatron() {
-if (patron != null) {
-            System.out.println(patron);
+        if (patron.isEmpty()) {
+            System.out.println("No patron registered.");
         } else {
-            System.out.println("No patron found with that card number.");
+            for (Patron patron : patrons.values()) {
+                System.out.println(patron);
+            }
         }
     }
 
@@ -142,14 +144,5 @@ if (patron != null) {
         Patron newPatron = new Patron(name, card);
         patrons.put(card, newPatron);
         return newPatron;
-    }
-
-    private static Patron findPatronByCard(String card) {
-        for (Patron p : patrons.values()) {
-            if (p.getCardNumber().equals(card)) {
-                return p;
-            }
-        }
-        return null;
     }
 }
