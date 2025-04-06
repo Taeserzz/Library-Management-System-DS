@@ -95,7 +95,7 @@ public class Search {
     public static List<Book> searchByKeyword(String keyword, List<Book> books) {
         List<Book> results = new ArrayList<>();
         for (Book book : books) {
-            if (book.getTitle().toLowerCase().contains(keyword.toLowerCase() ||
+            if (book.getTitle().toLowerCase().contains(keyword.toLowerCase()) ||
                 book.getAuthor().toLowerCase().contains(keyword.toLowerCase()) ||
                 book.getISBN().contains(keyword)) {
                 results.add(books);
