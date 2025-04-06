@@ -48,7 +48,7 @@ public class UI {
         String title = promptNonEmpty("Enter book title to check out: ");
 
         Patron patron = getOrCreatePatron(name, card);
-        boolean success = CheckOut.checkOutBook(title, patron);
+        boolean success = CheckOut.checkOut(title, patron);
 
         if (success) {
             System.out.println("Book checked out.");
