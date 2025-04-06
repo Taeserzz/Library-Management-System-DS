@@ -75,4 +75,16 @@ public class CheckOut {
         tempBook.setAvailable(true);
         FileHandler.saveBooks(List.of(tempBook));
     }
+
+    public static boolean checkOut(String bookTitle, Patron patron) {
+        LocalDate today = LocalDate.now();
+        LocalDate dueDate = today.plusWeeks(2); // For example, 2 weeks checkout period 
+        try {
+            CheckOut checkout = new CheckOut(bookTitle, patron.getName(), today, dueDate);
+            return true;
+        } catch (IllegalStateException | IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
 }
