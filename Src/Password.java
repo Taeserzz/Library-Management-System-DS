@@ -4,7 +4,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class Password {
 
-    private static final String PASSWORDS_FILE = "Data/passwords.txt";
+    private static final String PASSWORDS_FILE = "passwords.txt";
 
     // Hash a password using SHA-256
     public static String hashPassword(String password) {
