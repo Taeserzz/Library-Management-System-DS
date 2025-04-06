@@ -3,9 +3,9 @@ import java.util.*;
 
 public class FileHandler {
     
-    private static final String BOOKS_FILE = "Data/books.txt";
-    private static final String PATRONS_FILE = "Data/patrons.txt";
-    private static final String PASSWORDS_FILE = "Data/passwords.txt";
+    private static final String BOOKS_FILE = "books.txt";
+    private static final String PATRONS_FILE = "patrons.txt";
+    private static final String PASSWORDS_FILE = "passwords.txt";
     
     // Save books to file 
     public static void saveBooks(List<Book> books) {
@@ -27,7 +27,9 @@ public class FileHandler {
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
                 if (parts.length == 4) {
-                    books.add(new Book(parts[0], parts[1],  parts[2], Boolean.parseBoolean(parts[3])));
+                    Book book = new Book(parts[0], parts[1], parts[2]);
+                    books.setAvailable(Boolean.parseBoolean(parts[3]));
+                    books.add(book);
                 }
             }
         } catch (IOException e) {
@@ -40,6 +42,7 @@ public class FileHandler {
      public static void savePatrons(List<Patron> patrons) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(PATRONS_FILE))) {
             for (Patron patron : patrons) {
+                String checkedOutBooks = String.join(";", patron.getBooksCheckedOut()); // Save checked-out books as a comma-separated string
                 writer.write(patron.getName() + "," + patron.getLibraryCardNumber() + "," + patron.getCheckedOutBooks());
                 writer.newLine();
             }
@@ -55,9 +58,14 @@ public class FileHandler {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
-                if (parts.length == 3) {
+                if (parts.length >= 2) { // Ensure at least name and card number exist
                     Patron patron = new Patron(parts[0], parts[1]);
-                    patrons.setBooksCheckOut(parts[2]);
+                    if (parts.length > 2) { // If checked-out books are present
+                        String[] checkedOutBooks = parts[2].split(";");
+                        for (String bookTitle : checkedOutBooks) {
+                            patron.checkOutBook(bokTitle.trim()); // Trim to remove extra spaces
+                        }
+                    }
                     patrons.add(patron);
                 }
             }
