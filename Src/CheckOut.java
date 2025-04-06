@@ -2,6 +2,7 @@ import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
+import java.util.List;
 
 public class CheckOut {
     private String bookTitle;
@@ -19,7 +20,6 @@ public class CheckOut {
         if (checkOutDate.isAfter(dueDate)) {
             throw new IllegalArgumentException("Check-out date cannot be after due date.");
         }
-
         if (bookAvailability.getOrDefault(bookTitle, true)) {
             this.bookTitle = bookTitle;
             this.borrowerName = borrowerName;
@@ -27,7 +27,9 @@ public class CheckOut {
             this.dueDate = dueDate;
             checkoutHistory.push(this); // Store checkout action
             bookAvailability.put(bookTitle, false); // Mark book as checked out
-            FileHandler.saveBooks(List.of(new Book(bookTitle, "", "", false)));
+            Book tempBook = new Book(bookTitle, "", "");
+            tempBook.setAvailable(false);
+            FileHandler.saveBooks(List.of(tempBook));
         } else {
             throw new IllegalStateException("This book is already checked out.");
         }
@@ -57,7 +59,9 @@ public class CheckOut {
         if (!checkoutHistory.isEmpty()) {
             CheckOut lastCheckout = checkoutHistory.pop();
             bookAvailability.put(lastCheckout.bookTitle, true); // Mark book as available again
-            FileHandler.saveBooks(List.of(new Book(lastCheckout.bookTitle, "", "", true)));
+            Book tempBook = new Book(lastCheckout.bookTitle, "", "");
+            tempBook.seAvailable(true);
+            FileHandler.saveBooks(List.of(tempBook));
             return lastCheckout;
         } else {
             System.out.println("No checkouts to undo.");
@@ -67,6 +71,8 @@ public class CheckOut {
 
     public static void returnBook(String bookTitle) {
         bookAvailability.put(bookTitle, true); // Mark book as available again
-        FileHandler.saveBooks(List.of(new Book(bookTitle, "", "", true)));
+        Book tempBook = new Book(bookTitle, "", "");
+        tempBook.setAvailable(true);
+        FileHandler.saveBooks(List.of(tempBook));
     }
 }
