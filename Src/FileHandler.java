@@ -28,7 +28,7 @@ public class FileHandler {
                 String[] parts = line.split(",");
                 if (parts.length == 4) {
                     Book book = new Book(parts[0], parts[1], parts[2]);
-                    books.setAvailable(Boolean.parseBoolean(parts[3]));
+                    book.setAvailable(Boolean.parseBoolean(parts[3]));
                     books.add(book);
                 }
             }
@@ -41,7 +41,7 @@ public class FileHandler {
     // Save patrons to file 
      public static void savePatrons(Map<String, Patron> patrons) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(PATRONS_FILE))) {
-            for (Patron patron : patrons.values) {
+            for (Patron patron : patrons.values() {
                 String checkedOutBooks = String.join(";", patron.getBooksCheckedOut()); // Save checked-out books as a comma-separated string
                 writer.write(patron.getName() + "," + patron.getLibraryCardNumber() + "," + patron.getCheckedOutBooks());
                 writer.newLine();
@@ -63,7 +63,7 @@ public class FileHandler {
                     if (parts.length > 2) { // If checked-out books are present
                         String[] checkedOutBooks = parts[2].split(";");
                         for (String bookTitle : checkedOutBooks) {
-                            patron.checkOutBook(bokTitle.trim()); // Trim to remove extra spaces
+                            patron.checkOutBook(bookTitle.trim()); // Trim to remove extra spaces
                         }
                     }
                     patrons.put(patron.getCardNumber(), patron); // Use card number as key
