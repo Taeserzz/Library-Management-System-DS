@@ -63,7 +63,7 @@ public class UI {
             System.out.println("A patron with this card number already exists.");
         } else {
             Patron newPatron = new Patron(name, card);
-            patrons.put(card, newPaatron);
+            patrons.put(card, newPatron);
             System.out.println("Patron registered successfully.");
         }
     }
@@ -110,7 +110,7 @@ public class UI {
     }
 
     private static void viewAllPatron() {
-        if (patron.isEmpty()) {
+        if (patrons.isEmpty()) {
             System.out.println("No patron registered.");
         } else {
             for (Patron patron : patrons.values()) {
