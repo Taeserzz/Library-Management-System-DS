@@ -60,7 +60,7 @@ public class Library {
             temp = temp.getNext();
         }
         if (temp.getNext() != null) {
-            temp.setNext() = temp.getNext().getNext();
+            temp.setNext(temp.getNext().getNext());
         }
     }
 
@@ -142,7 +142,7 @@ public class Library {
                     String searchTitle = scanner.nextLine();
                     Book foundBook = library.searchBook(searchTitle);
                     if (foundBook != null) {
-                        System.out.println("Book found: " + foundBook.geTitle() + " by " + foundBook.getAuthor());
+                        System.out.println("Book found: " + foundBook.getTitle() + " by " + foundBook.getAuthor());
                     } else {
                         System.out.println("Book not found.");
                     }
