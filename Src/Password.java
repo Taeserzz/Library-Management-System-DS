@@ -3,7 +3,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class Password {
-
     private static final String PASSWORDS_FILE = "passwords.txt";
 
     // Hash a password using SHA-256
@@ -45,7 +44,7 @@ public class Password {
                     String storedPassword = parts[1];
 
                     // Compare stored plaintext password with hashed input
-                    if (storedUsername.equals(username) && storedPassword.equals(hashInputPassword)) {
+                    if (storedUsername.equals(username) && storedPassword.equals(hashedInputPassword)) {
                         return true; // Login successful
                     }
                 }
