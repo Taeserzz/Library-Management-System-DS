@@ -11,28 +11,34 @@ public class UI {
         patrons = FileHandler.loadPatrons();
         
         while (true) {
-            System.out.println("\n--- Library Management System ---");
-            System.out.println("1. Add Book");
-            System.out.println("2. Check Out Book");
-            System.out.println("3. Return Book");
-            System.out.println("4. Search Book");
-            System.out.println("5. View Patron Info");
-            System.out.println("6. Exit");
+            System.out.println("\n==== Library Management System ====");
+            System.out.println("1. View All Books");
+            System.out.println("2. Add New Book");
+            System.out.println("3. Register Patron");
+            System.out.println("4. Check Out Book");
+            System.out.println("5. Return Book");
+            System.out.println("6. Search Book");
+            System.out.println("7. View All Patrons");
+            System.out.println("8. Save and Exit");
             System.out.print("Choose an option: ");
             String choice = scanner.nextLine().trim();
 
             switch (choice) {
-                case "1": addBook(); break;
-                case "2": checkOutBook(); break;
-                case "3": returnBook(); break;
-                case "4": searchBook(); break;
-                case "5": viewPatron(); break;
-                case "6": exitProgram(); return;
+                case "1": viewAllBooks(); break;
+                case "2": addBook(); break;
+                case "3": registerPatron(); break;
+                case "4": checkOutBook(); break;
+                case "5": returnBook(); break;
+                case "6": searchBook(); break;
+                case "7": viewAllPatron(); break;
+                case "8": exitProgram(); return;
                 default: System.out.println("Invalid option.");
             }
         }
     }
-
+    
+    private static void viewAllBooks() {
+if (books.isEmpty()) {
     private static void addBook() {
         String title = promptNonEmpty("Enter title: ");
         String author = promptNonEmpty("Enter author: ");
