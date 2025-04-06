@@ -1,6 +1,3 @@
-
-
-
 import java.util.*; 
 
 // Book class to represent a book in the library
