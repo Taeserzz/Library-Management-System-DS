@@ -46,7 +46,7 @@ public class Book {
         return available; 
     }
 
-    pubblic void setAvailable(boolean available) {
+    public void setAvailable(boolean available) {
         this.available = available;
     }
 
