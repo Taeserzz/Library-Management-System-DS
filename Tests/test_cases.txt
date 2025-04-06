@@ -1,0 +1,33 @@
+--- TEST CASES FOR LIBRARY MANAGEMENT SYSTEM ---
+
+#1: Add Book
+Input: Title = "Dune", Author = "Frank Herbert", ISBN = "9780441172719"
+Expected: "Book added." and stored in books.txt
+
+#2: Check Out Book
+Input: Name = "Jane", Card = "C101", Title = "Dune"
+Expected: Book becomes unavailable, added to Jane's checkouts
+
+#3: Return Book
+Input: Card = "C101", Title = "Dune"
+Expected: Book marked as available, removed from patron's list
+
+#4: Search Book (by Title)
+Input: Keyword = "Dune"
+Expected: Returns book details of "Dune"
+
+#5: View Patron
+Input: Card = "C101"
+Expected: Display Jane’s checked-out books
+
+#6: Invalid Check Out
+Input: Title = "Unknown Book"
+Expected: Message "Book not found or unavailable."
+
+#7: Duplicate ISBN Entry
+Input: Add a book with ISBN = "9780441172719" again
+Expected: Accepts entry but may result in duplicates (depends on logic)
+
+#8: Exit Program
+Input: Choose Exit
+Expected: Saves all data and exits cleanly
