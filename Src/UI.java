@@ -8,7 +8,7 @@ public class UI {
     public static void main(String[] args) {
         // Load data
         books = FileHandler.loadBooks("books.txt");
-        patrons = FileHandler.loadPatrons(patrons.txt");
+        patrons = FileHandler.loadPatrons("patrons.txt");
         
         while (true) {
             System.out.println("\n--- Library Management System ---");
@@ -47,12 +47,12 @@ public class UI {
         String card = promptNonEmpty("Enter card number: ");
         String title = promptNonEmpty("Enter book title to check out: ");
 
-        Patron patron = getOrcreatePatron(name, card));
+        Patron patron = getOrcreatePatron(name, card);
         boolean success = CheckOut.CheckOutBook(title, books, patron);
 
         if (success) {
             System.out.println("Book checked out.");
-        } else :
+        } else {
             System.out.println("Book not found or unavailable.");
         }
     }
@@ -127,9 +127,9 @@ public class UI {
 
     private static Patron findPatronByCard(String card) {
         for (Patron p : patrons) {
-        if (p.getCarNumber().equals(card)) {
-            return p;
+            if (p.getCarNumber().equals(card)) {
+            }    return p;
         }
+        return null;
     }
-    return null;
 }
