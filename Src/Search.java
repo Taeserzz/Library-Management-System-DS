@@ -1,3 +1,6 @@
+import java.util.List;
+import java.util.ArrayList;
+
 class BookNode {
     String title; 
     String author;
@@ -98,7 +101,7 @@ public class Search {
             if (book.getTitle().toLowerCase().contains(keyword.toLowerCase()) ||
                 book.getAuthor().toLowerCase().contains(keyword.toLowerCase()) ||
                 book.getISBN().contains(keyword)) {
-                results.add(books);
+                results.add(book);
             }
         }
         return results;
