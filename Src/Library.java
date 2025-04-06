@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Library {
@@ -46,18 +48,19 @@ public class Library {
 
     // Method to remove a book by title
     public void removeBook(String title) {
-        if (headBook == null)
+        if (headBook == null) {
             return;
+        }
         if (headBook.getTitle().equalsIgnoreCase(title)) {
-            headBook = headBook.next;
+            headBook = headBook.getNext();
             return;
         }
         Book temp = headBook;
-        while (temp.next != null && !temp.next.getTitle().equalsIgnoreCase(title)) {
-            temp = temp.next;
+        while (temp.getNext() != null && !temp.getNext().getTitle().equalsIgnoreCase(title)) {
+            temp = temp.getNext();
         }
-        if (temp.next != null) {
-            temp.next = temp.next.next;
+        if (temp.getNext() != null) {
+            temp.setNext() = temp.getNext().getNext();
         }
     }
 
@@ -93,7 +96,7 @@ public class Library {
 
     // Main method to test the system
     public static void main(String[] args) {
-        LibraryManagementSystem library = new LibraryManagementSystem();
+        Library library = new Library();
         Scanner scanner = new Scanner(System.in);
 
         // Adding sample books
@@ -141,7 +144,7 @@ public class Library {
                     String searchTitle = scanner.nextLine();
                     Book foundBook = library.searchBook(searchTitle);
                     if (foundBook != null) {
-                        System.out.println("Book found: " + foundBook.title + " by " + foundBook.author);
+                        System.out.println("Book found: " + foundBook.geTitle() + " by " + foundBook.getAuthor());
                     } else {
                         System.out.println("Book not found.");
                     }
