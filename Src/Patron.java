@@ -3,6 +3,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 class Patron {
+
+    private static final String PATRONS_FILE = "patrons.txt";
     private String name;
     private String cardNumber;
     private List<String> booksCheckedOut; // Stores books checked out by the patron
