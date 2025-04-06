@@ -48,7 +48,7 @@ public class UI {
         String title = promptNonEmpty("Enter book title to check out: ");
 
         Patron patron = getOrcreatePatron(name, card);
-        boolean success = CheckOut.CheckOutBook(title, patron);
+        boolean success = CheckOut.checkOutBook(title, patron);
 
         if (success) {
             System.out.println("Book checked out.");
@@ -127,7 +127,7 @@ public class UI {
 
         private static Patron findPatronByCard(String card) {
             for (Patron p : patrons) {
-                if (p.getCarNumber().equals(card)) {
+                if (p.getCardNumber().equals(card)) {
                    return p;
                 }
             }
