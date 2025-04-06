@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class test_library {
+public class TestLibrary {
   public static void main(String[] args) {
     testBook();
     testPatron();
@@ -11,11 +11,11 @@ public class test_library {
   }
   
   private static void testBook() {
-    Book book = new Book("1984", "George Orwell", "1234567890123", true);
+    Book book = new Book("1984", "George Orwell", "1234567890123");
     assert book.getTitle().equals("1984");
     assert book.getAuthor().equals("George Orwell");
     assert book.getISBN().equals("1234567890123");
-    assert book.isAvalable();
+    assert book.isAvailable();
     book.setAvailable(false);
     assert !book.isAvailable();
     System.out.println("testBook passed.");
@@ -34,17 +34,16 @@ public class test_library {
 
   private static void testCheckOut() {
     List<Book> books = new ArrayList<>();
-    Book book = new Book("The Alchemist", "Paulo Coelho", "4567891234567", true);
+    Book book = new Book("The Alchemist", "Paulo Coelho", "4567891234567");
     books.add(book);
     Patron patron = new Patron("Bob", "P123");
   
-    boolean result = CheckOut.checkOutBook("The Alchemist", books, patron);
+    boolean result = CheckOut.checkOut("The Alchemist", patron);
     assert result;
     assert !book.isAvailable();
-    assert patron.getbooksCheckedOut().contains("The Alchemist");
+    assert patron.getBooksCheckedOut().contains("The Alchemist");
   
-    boolean returnResult = CheckOut.returnBook("The Alchemist", books, patron);
-    assert returnResult;
+    CheckOut.returnBook("The Alchemist");
     assert book.isAvailable();
     assert !patron.getBooksCheckedOut().contains("The Alchemist");
   
@@ -53,8 +52,8 @@ public class test_library {
   
   private static void testSearch() {
     Lis<Book> books = new ArrayList<>();
-    books.add(new Book("The Hobbit", "J.R.R. Tolkien", "1111111111111", true));
-    books.add(new Book("The Catcher in the Rye", "J.D. Salinger", "222222222222", true));
+    books.add(new Book("The Hobbit", "J.R.R. Tolkien", "1111111111111"));
+    books.add(new Book("The Catcher in the Rye", "J.D. Salinger", "222222222222"));
   
     List<Book> result = Search.searchByKeyword("hobbit", books);
     assert result.size() == 1;
