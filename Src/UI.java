@@ -47,7 +47,7 @@ public class UI {
         String card = promptNonEmpty("Enter card number: ");
         String title = promptNonEmpty("Enter book title to check out: ");
 
-        Patron patron = getOrcreatePatron(name, card);
+        Patron patron = getOrCreatePatron(name, card);
         boolean success = CheckOut.checkOutBook(title, patron);
 
         if (success) {
@@ -63,12 +63,8 @@ public class UI {
         
         Patron patron = patrons.get(card);
         if (patron != null) {
-            boolean success = CheckOut.returnBook(title, patron);
-            if (success) {
-                System.out.println("Book returned.");
-            } else {
-                System.out.println("Book not found in patron's list.");
-            }
+            CheckOut.returnBook(title);
+            System.out.println("Book returnrd.");
         } else {
             System.out.println("No patron found with that card number.");
         }
@@ -125,12 +121,12 @@ public class UI {
         return newPatron;
     }
 
-        private static Patron findPatronByCard(String card) {
-            for (Patron p : patrons) {
-                if (p.getCardNumber().equals(card)) {
-                   return p;
-                }
+    private static Patron findPatronByCard(String card) {
+        for (Patron p : patrons.values()) {
+            if (p.getCardNumber().equals(card)) {
+                return p;
             }
-            return null;
         }
+        return null;
+    }
 }
