@@ -19,17 +19,45 @@ class Patron {
     }
 
     // Getters and setters 
-    public String getName() { return name; }
-    public String getCardNumber() { return cardNumber; }
-    public List<String> getBooksCheckedOut() { return booksCheckout; } 
+    public String getName() { 
+        return name; 
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public String getCardNumber() { 
+        return cardNumber; 
+    }
+
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+    
+    public List<String> getBooksCheckedOut() { 
+        return booksCheckedout; 
+    } 
 
     // Add a book to the checked-out list 
-    public void checkOutBook(String bookTitle) {
-        booksCheckedOut.add(bookTitle);
+    public void checkOutBook(String title) {
+        booksCheckedOut.add(title);
     }
 
     // Return a book and remove it from the checked-out list 
-    public void returnBook(String bookTitle) {
-        booksCheckedOut.remove(bookTitle);
+    public void returnBook(String title) {
+        booksCheckedOut.remove(title);
+    }
+
+    public Patron getNext() {
+        return next;
+    } 
+
+    public void setNext(Patron next) {
+        this.next = next;
+    }
+    @Override 
+    public String toString() {
+        return "Name: " + name + ", card Number: " + cardNumber + ", Books Checked Out: " + bookCheckedOut;
     }
 }
