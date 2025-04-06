@@ -7,8 +7,8 @@ public class UI {
 
     public static void main(String[] args) {
         // Load data
-        books = FileHandler.loadBooks("books.txt");
-        patrons = FileHandler.loadPatrons("patrons.txt");
+        books = FileHandler.loadBooks();
+        patrons = FileHandler.loadPatrons();
         
         while (true) {
             System.out.println("\n--- Library Management System ---");
@@ -38,7 +38,7 @@ public class UI {
         String author = promptNonEmpty("Enter author: ");
         String isbn = promptNonEmpty("Enter ISBN: ");
 
-        books.add(new Book(title, author, isbn true));
+        books.add(new Book(title, author, isbn));
         System.out.println("Book added.");
     }
 
@@ -48,7 +48,7 @@ public class UI {
         String title = promptNonEmpty("Enter book title to check out: ");
 
         Patron patron = getOrcreatePatron(name, card);
-        boolean success = CheckOut.CheckOutBook(title, books, patron);
+        boolean success = CheckOut.CheckOutBook(title, patron);
 
         if (success) {
             System.out.println("Book checked out.");
@@ -63,7 +63,7 @@ public class UI {
         
         Patron patron = patrons.get(card);
         if (patron != null) {
-            boolean success = CheckOut.returnBook(title, books, patron);
+            boolean success = CheckOut.returnBook(title, patron);
             if (success) {
                 System.out.println("Book returned.");
             } else {
@@ -76,7 +76,7 @@ public class UI {
 
     private static void searchBook() {
         String keyword = promptNonEmpty("Enter search keyword: ");
-        List<Book> results = Search.searchByKeyword(keyword, book);
+        List<Book> results = Search.searchByKeyword(keyword, books);
 
         if (results.isEmpty()) {
             System.out.println("No books matched your search.");
@@ -99,8 +99,8 @@ public class UI {
     }
 
     private static void exitProgram() {
-        FileHandler.saveBooks("books.txt", books);
-        FileHandler.savePatrons("patrons.txt", patrons);
+        FileHandler.saveBooks(books);
+        FileHandler.savePatrons(patrons);
         System.out.println("Goodbye!");
     }
 
@@ -118,18 +118,19 @@ public class UI {
 
     private static Patron getOrCreatePatron(String name, String card) {
         if (patrons.containsKey(card)) {
-            return patron.get(card);
+            return patrons.get(card);
         }
         Patron newPatron = new Patron(name, card);
-        patrons.add(card, newPatron);
+        patrons.put(card, newPatron);
         return newPatron;
     }
 
-    private static Patron findPatronByCard(String card) {
-        for (Patron p : patrons) {
-            if (p.getCarNumber().equals(card)) {
-            }    return p;
+        private static Patron findPatronByCard(String card) {
+            for (Patron p : patrons) {
+                if (p.getCarNumber().equals(card)) {
+                   return p;
+                }
+            }
+            return null;
         }
-        return null;
-    }
 }
