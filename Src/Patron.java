@@ -19,15 +19,15 @@ class Patron {
     // Getters and setters 
     public String getName() { return name; }
     public String getCardNumber() { return cardNumber; }
-    public List<String> getBooksCheckout() { return booksCheckout; } 
+    public List<String> getBooksCheckedOut() { return booksCheckout; } 
 
     // Add a book to the checked-out list 
     public void checkOutBook(String bookTitle) {
-        booksCheckOut.add(booKTitle);
+        booksCheckedOut.add(bookTitle);
     }
 
     // Return a book and remove it from the checked-out list 
     public void returnBook(String bookTitle) {
-        booksCheckOut.remove(bookTitle);
+        booksCheckedOut.remove(bookTitle);
     }
 }
