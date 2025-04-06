@@ -45,7 +45,7 @@ public class Password {
                     String storedPassword = parts[1];
 
                     // Compare stored plaintext password with hashed input
-                    if (storedUsername.equals(username) && storedPassword.equals(hashPassword(password))) {
+                    if (storedUsername.equals(username) && storedPassword.equals(hashInputPassword)) {
                         return true; // Login successful
                     }
                 }
