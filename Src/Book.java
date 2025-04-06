@@ -17,7 +17,7 @@ public class Book {
 
     // Getters and setters 
     public String getTitle() { return title; }
-    public String getAuthur() { return author; }
+    public String getAuthor() { return author; }
     public String getISBN() { return ISBN; }
     public boolean isAvailable() { return available; } 
 
