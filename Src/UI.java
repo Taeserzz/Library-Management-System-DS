@@ -38,7 +38,15 @@ public class UI {
     }
     
     private static void viewAllBooks() {
-if (books.isEmpty()) {
+        if (books.isEmpty()) {
+            System.out.println("No books available.");
+        } else {
+            for (Book book : books) {
+                System.out.println(book);
+            }
+        }
+    }
+    
     private static void addBook() {
         String title = promptNonEmpty("Enter title: ");
         String author = promptNonEmpty("Enter author: ");
@@ -46,6 +54,18 @@ if (books.isEmpty()) {
 
         books.add(new Book(title, author, isbn));
         System.out.println("Book added.");
+    }
+
+    private static void registerPatron() {
+        String name = promptNonEmpty("Enter patron name: ");
+        String card = promptNonEmpty("Enter card number: ");
+        if (patrons.containsKey(card)) {
+            System.out.println("A patron with this card number already exists.");
+        } else {
+            Patron newPatron = new Patron(name, card);
+            patrons.put(card, newPaatron);
+            System.out.println("Patron registered successfully.");
+        }
     }
 
     private static void checkOutBook() {
@@ -89,11 +109,8 @@ if (books.isEmpty()) {
         }
     }
 
-    private static void viewPatron() {
-        String card = promptNonEmpty("Enter card number: ");
-        Patron patron = patrons.get(card);
-        
-        if (patron != null) {
+    private static void viewAllPatron() {
+if (patron != null) {
             System.out.println(patron);
         } else {
             System.out.println("No patron found with that card number.");
