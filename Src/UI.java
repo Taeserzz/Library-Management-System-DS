@@ -64,6 +64,7 @@ public class UI {
         } else {
             Patron newPatron = new Patron(name, card);
             patrons.put(card, newPatron);
+            FileHandler.savePatrons(patrons); // Save the Updated list of patrons
             System.out.println("Patron registered successfully.");
         }
     }
