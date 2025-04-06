@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class LibraryManagementSystem {
+public class Library {
     private Book headBook; // Head node of the book linked list
     private Patron headPatron; // Head node of the patron linked list
 
