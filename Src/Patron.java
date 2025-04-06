@@ -36,7 +36,7 @@ class Patron {
     }
     
     public List<String> getBooksCheckedOut() { 
-        return booksCheckedout; 
+        return booksCheckedOut; 
     } 
 
     // Add a book to the checked-out list 
@@ -58,6 +58,6 @@ class Patron {
     }
     @Override 
     public String toString() {
-        return "Name: " + name + ", card Number: " + cardNumber + ", Books Checked Out: " + bookCheckedOut;
+        return "Name: " + name + ", card Number: " + cardNumber + ", Books Checked Out: " + booksCheckedOut;
     }
 }
