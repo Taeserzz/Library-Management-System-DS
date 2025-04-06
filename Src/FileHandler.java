@@ -39,9 +39,9 @@ public class FileHandler {
     }
     
     // Save patrons to file 
-     public static void savePatrons(List<Patron> patrons) {
+     public static void savePatrons(Map<String, Patron> patrons) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(PATRONS_FILE))) {
-            for (Patron patron : patrons) {
+            for (Patron patron : patrons.values) {
                 String checkedOutBooks = String.join(";", patron.getBooksCheckedOut()); // Save checked-out books as a comma-separated string
                 writer.write(patron.getName() + "," + patron.getLibraryCardNumber() + "," + patron.getCheckedOutBooks());
                 writer.newLine();
@@ -52,8 +52,8 @@ public class FileHandler {
     }
     
     // Load patrons from file 
-    public static List<Patron> loadPatrons() {
-        List<Patron> patrons = new ArrayList<>();
+    public static Map<String, Patron> loadPatrons() {
+        Map<String, Patron> patrons = new HashMap<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(PATRONS_FILE))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -66,7 +66,7 @@ public class FileHandler {
                             patron.checkOutBook(bokTitle.trim()); // Trim to remove extra spaces
                         }
                     }
-                    patrons.add(patron);
+                    patrons.put(patron.getCardNumber(), patron); // Use card number as key
                 }
             }
         } catch (IOException e) {
