@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class test_library {
-  Public static void main(String[] args) {
+  public static void main(String[] args) {
     testBook();
     testPatron();
     testCheckOut();
@@ -22,8 +22,8 @@ public class test_library {
   }
   
   private static void testPatron() {
-    Patron patron = new Patron("Alice", "CARD123"0;
-    assert patron.getName().equals('Alice");
+    Patron patron = new Patron("Alice", "CARD123");
+    assert patron.getName().equals("Alice");
     assert patron.getCardNumber().equals("CARD123");
     patron.checkOutBook("1984");
     assert patron.getBooksCheckedOut().contains("1984");
@@ -60,7 +60,7 @@ public class test_library {
     assert result.size() == 1;
     assert result.get(0).getTitle().equalsIgnoreCase("The Hobbit");
   
-    List<Book> result2 = Search,searchByKeyword("salinger", books);
+    List<Book> result2 = Search.searchByKeyword("salinger", books);
     assert result2.size() == 1;
 
     List<Book> result3 = Search.searchByKeyword("unkown", books);
