@@ -1,12 +1,15 @@
 import java.util.*; 
 
-// Main
 public class UI {
     private static List<Book> books = new ArrayList<>();
     private static Map<String, Patron> patrons = new HashMap<>();
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        // Load data
+        books = FileHandler.loadBooks("books.txt");
+        patrons = FileHandler.loadPatrons(patrons.txt");
+        
         while (true) {
             System.out.println("\n--- Library Management System ---");
             System.out.println("1. Add Book");
@@ -24,7 +27,7 @@ public class UI {
                 case "3": returnBook(); break;
                 case "4": searchBook(); break;
                 case "5": viewPatron(); break;
-                case "6": System.exit(0);
+                case "6": exitProgram(); return;
                 default: System.out.println("Invalid option.");
             }
         }
@@ -45,10 +48,10 @@ public class UI {
         String title = promptNonEmpty("Enter book title to check out: ");
 
         Patron patron = getOrcreatePatron(name, card));
-        boolean success = CheckOutBook(title, books, patron);
+        boolean success = CheckOut.CheckOutBook(title, books, patron);
 
-        if (sucess) {
-            System.out.println("Book Checked out.");
+        if (success) {
+            System.out.println("Book checked out.");
         } else :
             System.out.println("Book not found or unavailable.");
         }
@@ -58,7 +61,7 @@ public class UI {
         String card = promptNonEmpty("Enter card number: ");
         String title = promptNonEmpty("Enter book title to return: ");
         
-        Patron patron = findPatronByCard(card);
+        Patron patron = patrons.get(card);
         if (patron != null) {
             boolean success = CheckOut.returnBook(title, books, patron);
             if (success) {
@@ -86,7 +89,7 @@ public class UI {
 
     private static void viewPatron() {
         String card = promptNonEmpty("Enter card number: ");
-        Patron patron = findPatronByCard(card);
+        Patron patron = patrons.get(card);
         
         if (patron != null) {
             System.out.println(patron);
@@ -114,13 +117,11 @@ public class UI {
     }
 
     private static Patron getOrCreatePatron(String name, String card) {
-        for (Patron p : patrons) {
-            if (p.getCardNumber().equals(card)) {
-                return p;
-            }
+        if (patrons.containsKey(card)) {
+            return patron.get(card);
         }
         Patron newPatron = new Patron(name, card);
-        patrons.add(newPatron);
+        patrons.add(card, newPatron);
         return newPatron;
     }
 
