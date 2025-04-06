@@ -1,6 +1,9 @@
 class BookNode {
-    String title, author, ISBN;
-    BookNode left, right;
+    String title; 
+    Strin author;
+    String ISBN;
+    BookNode left;
+    BookNode right;
 
     public BookNode(String title, String author, String ISBN) {
         this.title = title;
@@ -21,9 +24,10 @@ public class Search {
         if (root == null) {
             return new BookNode(title, author, ISBN);
         }
-        if (title.compareTo(root.title) < 0) {
+        int compareResult = title.compareTo(root.title);
+        if (compareResult < 0) {
             root.left = insertRec(root.left, title, author, ISBN);
-        } else if (title.compareTo(root.title) > 0) {
+        } else if (compareResult > 0) {
             root.right = insertRec(root.right, title, author, ISBN);
         }
         return root;
@@ -37,23 +41,24 @@ public class Search {
         if (root == null || root.title.equalsIgnoreCase(title)) {
             return root;
         }
-        return title.compareToIgnoreCase(root.title) < 0 ? searchTitleRec(root.left, title) : searchTitleRec(root.right, title);
+        int compareResult = title.compareToIgnoreCase(root.title);
+        return compareResult < 0 ? searchTitleRec(root.left, title) : searchTitleRec(root.right, title);
     }
 
     public void searchByAuthor(String author) {
         searchAuthorRec(root, author);
     }
 
-    private void searchAuthorRec(BookNode root, String author) {
-        if (root != null) return null;
+    private BookNode searchAuthorRec(BookNode root, String author) {
+        if (root == null) {
+            return;
+        }
         if (root.author.equalsIgnoreCase(author)) {
-            return root;
+            System.out.println("Book found: Title: " + root.title + ", Author: " + root.author + ", ISBN: " + root.ISBN);
+            return;
         }
-        BookNode found = searchAuthorRec(root.right, author);
-        if (found == null) {
-            found = searchAuthorRec(root.right, author);
-        }
-        return found;
+        searchAuthorRec(root.left, author);
+        searchAuthorRec(root.right, author);
     }
 
     public BookNode searchByISBN(String ISBN) {
@@ -61,7 +66,9 @@ public class Search {
     }
 
     private BookNode searchISBNRec(BookNode root, String ISBN) {
-        if (root == null) return null;
+        if (root == null) {
+            return null;
+        }
          if (root.ISBN.equals(ISBN)) {
              return root;
          } 
