@@ -18,11 +18,48 @@ public class Book {
     }
 
     // Getters and setters 
-    public String getTitle() { return title; }
-    public String getAuthor() { return author; }
-    public String getISBN() { return ISBN; }
-    public boolean isAvailable() { return available; } 
+    public String getTitle() { 
+        return title; 
+    }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    
+    public String getAuthor() { 
+        return author; 
+    }
 
-    public void setAvailable(boolean status) {this.available = status; }
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+    
+    public String getISBN() { 
+        return ISBN; 
+    }
+
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
+    }
+    
+    public boolean isAvailable() { 
+        return available; 
+    }
+
+    pubblic void setAvailable(boolean available) {
+        this.available = available;
+    }
+
+    public Book getNext() {
+        return next;
+    }
+
+    public void setNext(Book next) {
+        this.next = next;
+    }
+
+    @Override 
+    public String toString() {
+        return "Title: " + title + ", Author: " + author + ", ISBN: " + ISBN + ", Available: " + available;
+    }
 }
