@@ -60,7 +60,7 @@ public class CheckOut {
             CheckOut lastCheckout = checkoutHistory.pop();
             bookAvailability.put(lastCheckout.bookTitle, true); // Mark book as available again
             Book tempBook = new Book(lastCheckout.bookTitle, "", "");
-            tempBook.seAvailable(true);
+            tempBook.setAvailable(true);
             FileHandler.saveBooks(List.of(tempBook));
             return lastCheckout;
         } else {
