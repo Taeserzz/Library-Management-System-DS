@@ -35,7 +35,7 @@ public class Password {
 
     // Verify user login (hash input and compare with plaintext password)
     public static boolean verifyUser(String username, String password) {
-        String hashedInputPassword = hashedPassword(password);
+        String hashedInputPassword = hashPassword(password);
         try (BufferedReader reader = new BufferedReader(new FileReader(PASSWORDS_FILE))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -45,7 +45,7 @@ public class Password {
                     String storedPassword = parts[1];
 
                     // Compare stored plaintext password with hashed input
-                    if (storedUsername.equals(username) && storedPassword.equals(hashPassword(null))) {
+                    if (storedUsername.equals(username) && storedPassword.equals(hashPassword(password))) {
                         return true; // Login successful
                     }
                 }
