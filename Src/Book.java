@@ -1,5 +1,7 @@
 // Class representing a book in the library
 public class Book {
+
+    private static final String BOOKS_FILE = "books.txt";
     private String title; 
     private String author;
     private String ISBN;
