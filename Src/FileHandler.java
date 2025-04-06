@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.*;
 
 public class FileHandler {
-    
     private static final String BOOKS_FILE = "books.txt";
     private static final String PATRONS_FILE = "patrons.txt";
     private static final String PASSWORDS_FILE = "passwords.txt";
@@ -43,7 +42,7 @@ public class FileHandler {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(PATRONS_FILE))) {
             for (Patron patron : patrons.values()) {
                 String checkedOutBooks = String.join(";", patron.getBooksCheckedOut()); // Save checked-out books as a comma-separated string
-                writer.write(patron.getName() + "," + patron.getLibraryCardNumber() + "," + patron.getCheckedOutBooks());
+                writer.write(patron.getName() + "," + patron.getLibraryCardNumber() + "," + checkedOutBooks);
                 writer.newLine();
             }
         } catch (IOException e) {
