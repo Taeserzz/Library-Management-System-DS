@@ -78,8 +78,7 @@ public class Library {
     public void displayBooks() {
         Book temp = headBook;
         while (temp != null) {
-            System.out.println("Title: " + temp.getTitle() + ", Author: " + temp.getAuthor() + ", ISBN: " + temp.getISBN()
-                    + ", Available: " + temp.isAvailable());
+            System.out.println(temp);
             temp = temp.getNext();
         }
     }
@@ -88,8 +87,7 @@ public class Library {
     public void displayPatrons() {
         Patron temp = headPatron;
         while (temp != null) {
-            System.out.println("Name: " + temp.getName() + ", Card Number: " + temp.getCardNumber() 
-                     + ", Books Checked Out: " + temp.getBooksCheckedOut());
+            System.out.println(temp);
             temp = temp.getNext();
         }
     }
