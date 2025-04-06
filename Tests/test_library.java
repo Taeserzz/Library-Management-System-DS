@@ -1,4 +1,5 @@
-import java.util*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class test_library {
   Public static void main(String[] args) {
@@ -65,7 +66,7 @@ public class test_library {
     List<Book> result3 = Search.searchByKeyword("unkown", books);
     assert result3.isEmpty();
   
-    System.out.println("testSearch passed.);
+    System.out.println("testSearch passed.");
   }
 }
   
