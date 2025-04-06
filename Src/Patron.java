@@ -1,10 +1,12 @@
 // Class representing a library patron
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
-class Patron {
-
+public class Patron implements Serializable {
+    private static final long serialVersionUID = 1L;
     private static final String PATRONS_FILE = "patrons.txt";
+    
     private String name;
     private String cardNumber;
     private List<String> booksCheckedOut; // Stores books checked out by the patron
@@ -33,6 +35,10 @@ class Patron {
 
     public void setCardNumber(String cardNumber) {
         this.cardNumber = cardNumber;
+    }
+
+    public String getLibraryCardNumber() {
+        return cardNumber;
     }
     
     public List<String> getBooksCheckedOut() { 
