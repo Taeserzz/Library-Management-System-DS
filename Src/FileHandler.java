@@ -41,7 +41,7 @@ public class FileHandler {
     // Save patrons to file 
      public static void savePatrons(Map<String, Patron> patrons) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(PATRONS_FILE))) {
-            for (Patron patron : patrons.values() {
+            for (Patron patron : patrons.values()) {
                 String checkedOutBooks = String.join(";", patron.getBooksCheckedOut()); // Save checked-out books as a comma-separated string
                 writer.write(patron.getName() + "," + patron.getLibraryCardNumber() + "," + patron.getCheckedOutBooks());
                 writer.newLine();
