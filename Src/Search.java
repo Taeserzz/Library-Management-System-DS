@@ -24,7 +24,7 @@ public class Search {
         if (root == null) {
             return new BookNode(title, author, ISBN);
         }
-        int compareResult = title.compareTo(root.title);
+        int compareResult = title.compareTo(root.title); // Store comparison result
         if (compareResult < 0) {
             root.left = insertRec(root.left, title, author, ISBN);
         } else if (compareResult > 0) {
@@ -49,7 +49,7 @@ public class Search {
         searchAuthorRec(root, author);
     }
 
-    private BookNode searchAuthorRec(BookNode root, String author) {
+    private void searchAuthorRec(BookNode root, String author) {
         if (root == null) {
             return;
         }
@@ -90,4 +90,17 @@ public class Search {
             inOrderRec(root.right);
         }
     }
+
+    // New method to search books by keyword 
+    public static List<Book> searchByKeyword(String keyword, List<Book> books) {
+        List<Book> results = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getTitle().roLowerCase().contains(keyword.toLowerCase() ||
+                book.getAuthor().toLowerCase().contains(keyword.toLowerCase()) ||
+                book.getISBN().contains(keyword)) {
+                results.add(books);
+            }
+        }
+        retur results;
+    }                                                   
 }
